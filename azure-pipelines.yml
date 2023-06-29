@@ -6,7 +6,7 @@ stages:
   jobs:
   - job: Build
     pool:
-     name: Default
+      vmImage: windows-latest
     workspace:
      clean: outputs 
     steps:
