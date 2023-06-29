@@ -23,11 +23,11 @@ stages:
           inputs:
             versionSpec: 
             checkLatest: true
-        - task: DotNetCoreCLI@2
-          displayName: 'dotnet restore'
+        - task: NuGetCommand@2
           inputs:
             command: 'restore'
-            projects: '*.sln'
+            restoreSolution: '**/*.sln'
+            feedsToUse: 'select'
 
         - task: DotNetCoreCLI@2
           displayName: Build
